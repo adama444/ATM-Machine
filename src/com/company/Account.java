@@ -3,11 +3,12 @@ package com.company;
 public class Account {
     private int id;
     private int PIN;
-    protected static int balance;
+    private int balance;
 
-    public Account(int id, int PIN) {
+    public Account(int id, int PIN, int balance) {
         this.id = id;
         this.PIN = PIN;
+        this.balance = balance;
     }
 
     public int getId() {
@@ -20,5 +21,17 @@ public class Account {
 
     public void setPIN(int PIN) {
         this.PIN = PIN;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public void withdrawMoney(int amount) {
+        balance -= amount;
     }
 }
