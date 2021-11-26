@@ -82,9 +82,22 @@ public class Controller {
     }
 
     private void withdrawMoney() {
+        System.out.println("Enter the amount :");
+        int amountToWithdraw = scanner.nextInt();
+        if (currentAccount.getBalance() >= amountToWithdraw) {
+            currentAccount.withdrawMoney(amountToWithdraw);
+            System.out.println("Withdraw succeed");
+        } else {
+            System.out.println("Withdraw impossible. Your balance isn't enough");
+        }
+
     }
 
     private void depositMoney() {
+        System.out.println("Enter the amount :");
+        int amountToDeposit = scanner.nextInt();
+        currentAccount.depositMoney(amountToDeposit);
+        System.out.println("Deposit succeed");
     }
 
     private void transferMoney() {
